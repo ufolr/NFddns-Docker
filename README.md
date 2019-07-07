@@ -4,7 +4,9 @@
 ## 使用说明
 使用时请将宿主机存放配置文件的目录挂载到/opt/ddns.
 
-示例：`docker run -v "${PWD}:/opt/ddns" -d --net host --name nfddns ufolr/nfddns:latest`
+示例:  
+`docker pull ufolr/nfddns`  
+`docker run -v "${PWD}:/opt/ddns" -d --net host --name nfddns ufolr/nfddns:latest`
 
 ## 环境变量说明
 `DDNS_CONFIG` 配置文件，默认值 `/opt/ddns/config.json`  
