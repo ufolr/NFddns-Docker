@@ -18,4 +18,4 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositorie
 RUN echo "$LOG_CLEAN_CRON   rm -f ${PWD}/$DDNS_LOG" >> /var/spool/cron/crontabs/root && \
     echo "$RUN_CRON   ddns -c ${PWD}/$DDNS_CONFIG >> ${PWD}/$DDNS_LOG 2>&1" >> /var/spool/cron/crontabs/root
 
-ENTRYPOINT ddns -c $DDNS_CONFIG >> $DDNS_LOG &&  crond && tail -f $DDNS_LOG
+CMD ddns -c $DDNS_CONFIG >> $DDNS_LOG &&  crond && tail -f $DDNS_LOG
